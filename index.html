@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b6bcb" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Коммунальные расходы" />
+
+  <title>Калькулятор коммунальных расходов</title>
+
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="apple-touch-icon" href="./icon-180.png" />
+  <link rel="icon" type="image/png" href="./icon-192.png" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div class="hero-icon" aria-hidden="true">⌂</div>
+      <h1>Калькулятор коммунальных расходов</h1>
+      <p>Электроэнергия и вода</p>
+    </header>
+
+    <section class="section-card" aria-labelledby="electricity-title">
+      <div class="section-heading">
+        <span class="section-icon electricity-icon" aria-hidden="true">⚡</span>
+        <h2 id="electricity-title">Электроэнергия</h2>
+      </div>
+
+      <div class="meter-card">
+        <div class="meter-header">
+          <strong>T1</strong>
+          <span class="tariff">11,43 ₽/кВт·ч</span>
+        </div>
+        <div class="input-grid">
+          <label>
+            <span>Предыдущие</span>
+            <input id="t1Previous" type="text" inputmode="decimal" placeholder="0,00" autocomplete="off" />
+          </label>
+          <label>
+            <span>Текущие</span>
+            <input id="t1Current" type="text" inputmode="decimal" placeholder="0,00" autocomplete="off" />
+          </label>
+        </div>
+      </div>
+
+      <div class="meter-card">
+        <div class="meter-header">
+          <strong>T2</strong>
+          <span class="tariff">4,15 ₽/кВт·ч</span>
+        </div>
+        <div class="input-grid">
+          <label>
+            <span>Предыдущие</span>
+            <input id="t2Previous" type="text" inputmode="decimal" placeholder="0,00" autocomplete="off" />
+          </label>
+          <label>
+            <span>Текущие</span>
+            <input id="t2Current" type="text" inputmode="decimal" placeholder="0,00" autocomplete="off" />
+          </label>
+        </div>
+      </div>
+
+      <div class="meter-card">
+        <div class="meter-header">
+          <strong>T3</strong>
+          <span class="tariff">8,10 ₽/кВт·ч</span>
+        </div>
+        <div class="input-grid">
+          <label>
+            <span>Предыдущие</span>
+            <input id="t3Previous" type="text" inputmode="decimal" placeholder="0,00" autocomplete="off" />
+          </label>
+          <label>
+            <span>Текущие</span>
+            <input id="t3Current" type="text" inputmode="decimal" placeholder="0,00" autocomplete="off" />
+          </label>
+        </div>
+      </div>
+
+      <div class="results-card">
+        <div class="results-title">
+          <span aria-hidden="true">▥</span>
+          <h3>Результаты электроэнергии</h3>
+        </div>
+
+        <div class="result-row">
+          <div>
+            <strong>T1</strong>
+            <small id="t1Calculation">—</small>
+          </div>
+          <span id="t1Result" class="result-value">—</span>
+        </div>
+
+        <div class="result-row">
+          <div>
+            <strong>T2</strong>
+            <small id="t2Calculation">—</small>
+          </div>
+          <span id="t2Result" class="result-value">—</span>
+        </div>
+
+        <div class="result-row">
+          <div>
+            <strong>T3</strong>
+            <small id="t3Calculation">—</small>
+          </div>
+          <span id="t3Result" class="result-value">—</span>
+        </div>
+
+        <div class="result-total">
+          <div>
+            <strong>Электроэнергия всего</strong>
+            <small id="electricityConsumptionTotal">—</small>
+          </div>
+          <span id="electricityCostTotal">—</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card" aria-labelledby="water-title">
+      <div class="section-heading">
+        <span class="section-icon water-icon" aria-hidden="true">💧</span>
+        <h2 id="water-title">Вода</h2>
+      </div>
+
+      <div class="meter-card">
+        <div class="meter-header">
+          <strong>Холодная вода</strong>
+          <span class="tariff">67,77 ₽/м³</span>
+        </div>
+        <div class="input-grid">
+          <label>
+            <span>Предыдущие</span>
+            <input id="coldPrevious" type="text" inputmode="decimal" placeholder="0,00" autocomplete="off" />
+          </label>
+          <label>
+            <span>Текущие</span>
+            <input id="coldCurrent" type="text" inputmode="decimal" placeholder="0,00" autocomplete="off" />
+          </label>
+        </div>
+      </div>
+
+      <div class="meter-card">
+        <div class="meter-header">
+          <strong>Горячая вода</strong>
+          <span class="tariff">312,50 ₽/м³</span>
+        </div>
+        <div class="input-grid">
+          <label>
+            <span>Предыдущие</span>
+            <input id="hotPrevious" type="text" inputmode="decimal" placeholder="0,00" autocomplete="off" />
+          </label>
+          <label>
+            <span>Текущие</span>
+            <input id="hotCurrent" type="text" inputmode="decimal" placeholder="0,00" autocomplete="off" />
+          </label>
+        </div>
+      </div>
+
+      <div class="results-card">
+        <div class="results-title">
+          <span aria-hidden="true">▥</span>
+          <h3>Результаты воды</h3>
+        </div>
+
+        <div class="result-row">
+          <div>
+            <strong>Холодная вода</strong>
+            <small id="coldCalculation">—</small>
+          </div>
+          <span id="coldResult" class="result-value">—</span>
+        </div>
+
+        <div class="result-row">
+          <div>
+            <strong>Горячая вода</strong>
+            <small id="hotCalculation">—</small>
+          </div>
+          <span id="hotResult" class="result-value">—</span>
+        </div>
+
+        <div class="result-total">
+          <strong>Вода всего</strong>
+          <span id="waterCostTotal">—</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button id="calculateButton" class="primary-button" type="button">
+        <span aria-hidden="true">=</span>
+        Рассчитать
+      </button>
+
+      <button id="clearButton" class="secondary-button" type="button">
+        <span aria-hidden="true">×</span>
+        Очистить
+      </button>
+    </div>
+
+    <section class="grand-total-card" aria-live="polite">
+      <div class="currency-icon" aria-hidden="true">₽</div>
+      <p>ОБЩАЯ СТОИМОСТЬ</p>
+      <strong id="grandTotal">0,00 ₽</strong>
+    </section>
+
+    <footer>
+      <p>Тарифы фиксированы в текущей версии приложения.</p>
+    </footer>
+  </main>
+
+  <div id="errorDialog" class="dialog-backdrop hidden" role="alertdialog" aria-modal="true" aria-labelledby="errorTitle">
+    <div class="dialog">
+      <h2 id="errorTitle">Ошибка</h2>
+      <p id="errorMessage"></p>
+      <button id="closeDialogButton" type="button">OK</button>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
