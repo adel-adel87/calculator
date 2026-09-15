@@ -6,9 +6,9 @@ Responsive web application for calculating monthly electricity and water costs.
 
 - T1: 11.43 ₽/кВт·ч
 - T2: 4.15 ₽/кВт·ч
-- T3: 8.10 ₽/кВт·ч
+- T3: 8.00 ₽/кВт·ч
 - Cold water: 67.77 ₽/м³
-- Hot water: 312.50 ₽/м³
+- Hot water: 317.71 ₽/м³
 
 ## Run locally
 
