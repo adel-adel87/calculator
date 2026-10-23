@@ -1,9 +1,9 @@
 const TARIFFS = Object.freeze({
-  t1: 11.43,
-  t2: 4.15,
-  t3: 8.10,
+  t1: 12.39,
+  t2: 4.85,
+  t3: 8.90,
   cold: 67.77,
-  hot: 312.50
+  hot: 317.71
 });
 
 const fieldIds = [
